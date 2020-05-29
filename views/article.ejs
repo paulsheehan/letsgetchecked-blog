@@ -1,10 +1,14 @@
-<h1> Blog Post </h1>
-<p> You are awesome! </p>
+<!DOCTYPE html>
+<html>
+    <%- include('head'); -%>
+    <%- include('header'); -%>
+    <h1> Blog Post </h1>
+    <p> You are awesome! </p>
 
-<div> 
-    <% if (data) { %>
-    <p>
-     <%= data.content %>
-    </p>
-    <% } %>
-</div>
+    <div> 
+        <% if (data) { %>
+        <%- data.content %>
+        <% } %>
+    </div>
+</html>
+
