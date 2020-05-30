@@ -6,5 +6,5 @@ gulp.task('sass', function(){
     
     return gulp.src('public/scss/styles.scss')
     .pipe(sass())
-    .pipe(gulp.dest('public/css/style.custom.css'))
+    .pipe(gulp.dest('public/css/style.css'))
 });
