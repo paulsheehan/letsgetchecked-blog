@@ -11,15 +11,19 @@
             <p class="text-big">Read some of our latest articles.</p>
             </header>
             <div class="row">
+            <% if(data){data.length} %>
+            <% if(!data){ %>
+                <p>No data</p>
+            <% } %>
             <% if (data) { %>
                 <% for(let i = 0; i < data.length; i++) { %>
                     <div class="post col-md-4">
-                        <div class="post-thumbnail"><a href="post.html"><img src="img/blog-1.jpg" alt="..." class="img-fluid"></a></div>
+                        <div class="post-thumbnail"><a href="/<%= data[i].slug %>"><img src="img/blog-1.jpg" alt="..." class="img-fluid"></a></div>
                         <div class="post-details">
                         <div class="post-meta d-flex justify-content-between">
                             <div class="date"><%- data[i].publish_date %></div>
                             <div class="category"><a href="#">Business</a></div>
-                        </div><a href="post.html">
+                        </div><a href="/<%= data[i].slug %>">
                             <h3 class="h4"><%- data[i].title %></h3></a>
                         <p class="text-muted"><%- data[i].description %></p>
                         </div>
@@ -32,4 +36,3 @@
 
     <%- include('footer'); -%>
 </html>
-<div class="testing">this is a test element</div>
