@@ -10,6 +10,7 @@ var api_host = 'http://localhost:9001'
 
 
 app.get("/", function(req, res){
+    console.log('Routing from Node, looking for id:');
     // GET: http://localhost:9001/posts
     axios.get(api_host + '/posts')
     .then(function (response) { 
@@ -20,26 +21,27 @@ app.get("/", function(req, res){
     });
 });
 
-app.get("/:id", function(req, res){
-    const blog_id = req.params.id
+app.get("/blog/:blogId", function(req, res) {
+    const blog_id = req.params.blogId
     // GET: http://localhost:9001/posts
     // Get all blogs
     axios.get(api_host + '/posts')
-    .then(function (response) { 
+    .then(function (response) {
         // Find blog with the matching slug
-        data = response.data.find((blog) => {
+        let blog_index = response.data.findIndex((blog) => {
             return blog.slug === blog_id;
-        })
-        return data;
-    })
-    .then((data) => {
-        if(data) {
-            console.log("Returning", data);
-            res.render("article", {data: data});
-        }else {
-            console.log("That blog does not exist.");
+        });
+        if(blog_index < 0) {
             // Return 404 page
-            res.render("home", {data: data});
+            res.render("404");
+        } else {
+            let data = {}
+            data.current_blog = response.data[blog_index];
+            data.all_blogs = response.data;
+            data.current_blog.blog_index = blog_index;
+            console.log(data);
+            
+            res.render("article", {data: data});
         }
     })
     .catch(function (error) {
