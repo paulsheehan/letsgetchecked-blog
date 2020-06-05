@@ -26,6 +26,10 @@ app.get("/", function(req, res){
     });
 });
 
+app.get("/blog/", function(req, res) { 
+    res.redirect('/');
+});
+
 app.get("/blog/:blogName", function(req, res) {
     const blog_name = req.params.blogName;
     let data = {}
