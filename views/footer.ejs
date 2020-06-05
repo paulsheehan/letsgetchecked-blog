@@ -16,7 +16,7 @@
               <% for(let i = 0; i < 3; i++) { %>  
                 <a href="/blog/<%- all_blogs[i].slug %>">
                   <div class="post d-flex align-items-center">
-                    <div class="image"><img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
+                    <div class="image"><img src="<%- '/img/small-thumbnail-'+i+'.png' %>" alt="..." class="img-fluid"></div>
                     <div class="title"><strong><%- all_blogs[i].title %></strong><span class="date last-meta"><%- all_blogs[i].publish_date %></span></div>
                   </div>
                 </a>

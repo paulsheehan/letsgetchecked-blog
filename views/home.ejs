@@ -3,18 +3,16 @@
     <%- include('head', {meta_date: { title: "LetsGetChecked - Blog", description: "LetsGetChecked's Blog for in company inovation and insite into Irelands fastest growing Health startup" }}); %>
     <%- include('header'); -%>
 
+      
     <!-- Latest Posts -->
-    <section class=""> 
+    <section class="latest"> 
         <div class="container">
-            <header> 
-            <h2>Latest from the blog</h2>
-            <p class="text-big">Read some of our latest articles.</p>
-            </header>
+            
             <div class="row">
             <% if (typeof data !== "undefined") { %>
                 <% for(let i = 0; i < data.length; i++) { %>
                     <div class="post col-md-4">
-                        <div class="post-thumbnail"><a href="blog/<%= data[i].slug %>"><img src="img/blog-1.jpg" alt="..." class="img-fluid"></a></div>
+                        <div class="post-thumbnail"><a href="blog/<%= data[i].slug %>"><img src="<%-'img/blog-'+((i + 1) % 7)+'.jpg'%>" alt="..." class="img-fluid"></a></div>
                         <div class="post-details">
                         <div class="post-meta d-flex justify-content-between">
                             <div class="date"><%- data[i].publish_date %></div>
@@ -26,6 +24,7 @@
                     </div>
                 <% } %>
             <% } %>
+            <!-- <button onclick="showAllblogs()" class="navbar-toggler">Show more</button> -->
             </div>
         </div>
     </section>

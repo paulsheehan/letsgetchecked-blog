@@ -8,7 +8,7 @@
           <main class="post blog-post col-lg-8"> 
             <div class="container">
               <div class="post-single">
-                <div class="post-thumbnail"><img src="/img/blog-post-3.jpeg" alt="..." class="img-fluid"></div>
+                <div class="post-thumbnail"><img src="<%- '/img/'+'blog-'+data.current_blog.blog_index%7+'.jpg' %>" alt="..." class="img-fluid"></div>
                 <div class="post-details">
                   <h1><%- data.current_blog.title %></h1>
                     <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a href="#" class="author d-flex align-items-center flex-wrap">
@@ -106,7 +106,7 @@
                     <a href="/blog/<%- data.all_blogs[i].slug %>">
                         <div class="item d-flex">
                             <div class="image">
-                                <img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid">
+                                <img src="<%- '/img/small-thumbnail-'+i+'.png' %>" alt="..." class="img-fluid">
                             </div>
                             <div>
                                 <div class="title">
