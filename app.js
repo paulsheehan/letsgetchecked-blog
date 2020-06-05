@@ -12,13 +12,17 @@ var api_host = 'http://localhost:9001'
 
 
 app.get("/", function(req, res){
+    let data = {};
     // GET: http://localhost:9001/posts
     axios.get(api_host + '/posts')
     .then(function (response) { 
-        res.render("home", {data: response.data});
+        data = response.data;
     })
     .catch(function (error) {
         console.log(error);
+    })
+    .finally(() =>{
+        res.render("home", {data: data});
     });
 });
 
