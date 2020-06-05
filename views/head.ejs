@@ -1,10 +1,23 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bootstrap Blog - B4 Template by Bootstrap Temple</title>
-    <meta name="description" content="">
+    
+    <meta name="keywords" content="Blog, Tech, Marketing, Process, Health, UX, Content, Startup">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
+    <meta name="author" content="Paul Sheehan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <% if(typeof meta_data !== "undefined") { %>
+        <title><%- meta_data.title %></title>
+        <meta name="description" content="<%- meta_data.description %>">
+    <% } %>
+
+    <% if(typeof meta_data === "undefined") { %>
+        <title>LetsGetChecked - Blog</title>
+        <meta name="description" content="LetsGetChecked's Blog for in company inovation and insite into Irelands fastest growing Health startup">
+    <% } %>
+
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->

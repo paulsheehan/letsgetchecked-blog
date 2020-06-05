@@ -12,6 +12,26 @@
     }
 }
 
+.widget.latest-posts .item {
+    align-items: center;
+    .title {
+        margin-bottom: 4px;
+    }
+    .date {
+        font-size: .8em;
+        color: #999;
+    }
+}
+
+footer .latest-posts {
+    display: flex;
+    flex-direction: column;
+    .date {
+        font-size: .8em;
+        color: #999;
+    }
+}
+
 @media only screen and (max-width: 576px) {
     .p404-section {
         img {

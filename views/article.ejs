@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <%- include('head'); -%>
-    <%- include('header'); -%>
+    <%- include('head', {meta_data: { title: data.current_blog.title, description: data.current_blog.description }}); %>
+    <%- include('header'); %>
     <div class="container">
         <div class="row">
           <!-- Latest Posts -->
@@ -104,12 +104,17 @@
               <div class="blog-posts">
                 <% for(let i = 0; i < 3; i++) { %>  
                     <a href="/blog/<%- data.all_blogs[i].slug %>">
-                        <div class="item d-flex align-items-center">
+                        <div class="item d-flex">
                             <div class="image">
                                 <img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid">
                             </div>
-                            <div class="title">
-                                <strong><%- data.all_blogs[i].title %></strong>
+                            <div>
+                                <div class="title">
+                                    <strong><%- data.all_blogs[i].title %></strong>
+                                </div>
+                                <div class="date">
+                                    <span><%- data.all_blogs[i].publish_date %></span>
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -119,6 +124,6 @@
           </aside>
         </div>
       </div>
-      <%- include('footer'); -%>
+      <%- include('footer', {all_blogs: data.all_blogs}); %>
 </html>
 

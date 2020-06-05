@@ -7,6 +7,21 @@
   display: block;
   margin: 0 auto; }
 
+.widget.latest-posts .item {
+  align-items: center; }
+  .widget.latest-posts .item .title {
+    margin-bottom: 4px; }
+  .widget.latest-posts .item .date {
+    font-size: .8em;
+    color: #999; }
+
+footer .latest-posts {
+  display: flex;
+  flex-direction: column; }
+  footer .latest-posts .date {
+    font-size: .8em;
+    color: #999; }
+
 @media only screen and (max-width: 576px) {
   .p404-section img {
     width: 300px; } }
