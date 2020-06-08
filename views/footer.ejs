@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-4">
           <div class="latest-posts">
-            <% if(typeof all_blogs !== "undefined") { %>  
+            <% if(Object.keys(all_blogs).length > 1) { %>  
               <% for(let i = 0; i < 3; i++) { %>  
                 <a href="/blog/<%- all_blogs[i].slug %>">
                   <div class="post d-flex align-items-center">
